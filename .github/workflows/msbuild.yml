@@ -16,6 +16,11 @@ jobs:
       env:
         ACTIONS_ALLOW_UNSECURE_COMMANDS: true
 
+    - name: Setup Nuget
+      uses: nuget/setup-nuget@v1
+
+    - run: nuget restore DesktopLauncher.sln
+
     - name: Build
       run: msbuild DataPortalPager.sln /t:Rebuild /p:Configuration=Release /p:Platform=x86
     
