@@ -31,6 +31,6 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: DataPotalPager-${{ github.sha }}
-        path: DataPotalPager.zip
+        path: DataPotalPager-${{ github.sha }}.zip
 
 
