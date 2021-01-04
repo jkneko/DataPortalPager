@@ -27,7 +27,9 @@ namespace DataPortalPager
             // Read options
             var options = new JsonSerializerOptions
             {
-                Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+                Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+                ReadCommentHandling = JsonCommentHandling.Skip,
+                AllowTrailingCommas = true
             };
 
             var stream = new FileStream(settingsFileName, FileMode.Open, FileAccess.Read);

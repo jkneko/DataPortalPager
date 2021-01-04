@@ -1,0 +1,31 @@
+name: MSBuild
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    name: MSBuild
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Setup MSBuild.exe
+      uses: warrenbuckley/Setup-MSBuild@v1
+      env:
+        ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+
+    - name: Build
+      run: msbuild DataPortalPager.sln /t:Rebuild /p:Configuration=Release /p:Platform=x86
+    
+    - name: zip
+      run: Compress-Archive -DestinationPath DataPotalPager-${{ github.sha }}.zip -Path DataPortalPager/bin/x86/Release/
+      
+    - name: Upload artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: DataPotalPager-${{ github.sha }}
+        path: DataPotalPager.zip
+
+
