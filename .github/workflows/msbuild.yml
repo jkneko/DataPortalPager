@@ -19,7 +19,7 @@ jobs:
     - name: Setup Nuget
       uses: nuget/setup-nuget@v1
 
-    - run: nuget restore DesktopLauncher.sln
+    - run: nuget restore DataPotalPager.sln
 
     - name: Build
       run: msbuild DataPortalPager.sln /t:Rebuild /p:Configuration=Release /p:Platform=x86
