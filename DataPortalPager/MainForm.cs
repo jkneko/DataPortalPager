@@ -35,10 +35,6 @@ namespace DataPortalPager
             timer1.Interval = settings.initialWait * 1000;
             pageCount = settings.pageCount;
 
-            // Set window fullscreen
-            this.FormBorderStyle = FormBorderStyle.None;
-            this.WindowState = FormWindowState.Maximized;
-
             // Initialize chromium webview
             string appPath = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
             Directory.SetCurrentDirectory(appPath);
@@ -58,7 +54,7 @@ namespace DataPortalPager
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            timer1.Interval = settings.interval;
+            timer1.Interval = settings.interval * 1000;
             if (Form.ActiveForm != this)
                 return;
 
@@ -72,6 +68,15 @@ namespace DataPortalPager
             {
                 SendKeys.Send("{RIGHT}");
             }
+        }
+
+        private void fullscreenTimer_Tick(object sender, EventArgs e)
+        {
+            fullscreenTimer.Enabled = false;
+
+            // Set window fullscreen
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.WindowState = FormWindowState.Maximized;
         }
     }
 

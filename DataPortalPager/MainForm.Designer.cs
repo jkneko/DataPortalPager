@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.fullscreenTimer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // timer1
@@ -38,6 +39,12 @@
             this.timer1.Enabled = true;
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // fullscreenTimer
+            // 
+            this.fullscreenTimer.Enabled = true;
+            this.fullscreenTimer.Interval = 500;
+            this.fullscreenTimer.Tick += new System.EventHandler(this.fullscreenTimer_Tick);
             // 
             // MainForm
             // 
@@ -56,6 +63,7 @@
 
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer fullscreenTimer;
     }
 }
 
