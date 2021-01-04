@@ -25,12 +25,12 @@ jobs:
       run: msbuild DataPortalPager.sln /t:Rebuild /p:Configuration=Release /p:Platform=x86
     
     - name: zip
-      run: Compress-Archive -DestinationPath DataPotalPager-${{ github.sha }}.zip -Path DataPortalPager/bin/x86/Release/
+      run: Compress-Archive -DestinationPath DataPortalPager-${{ github.sha }}.zip -Path DataPortalPager/bin/x86/Release/
       
     - name: Upload artifact
       uses: actions/upload-artifact@v2
       with:
-        name: DataPotalPager-${{ github.sha }}
-        path: DataPotalPager-${{ github.sha }}.zip
+        name: DataPortalPager-${{ github.sha }}
+        path: DataPortalPager-${{ github.sha }}.zip
 
 

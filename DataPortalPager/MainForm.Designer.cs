@@ -54,7 +54,7 @@
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
-            this.Text = "DataPotalPager";
+            this.Text = "DataPortalPager";
             this.ResumeLayout(false);
 
         }
