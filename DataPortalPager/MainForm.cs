@@ -77,8 +77,11 @@ namespace DataPortalPager
             fullscreenTimer.Enabled = false;
 
             // Set window fullscreen
-            this.FormBorderStyle = FormBorderStyle.None;
-            this.WindowState = FormWindowState.Maximized;
+            if (settings.fullScreen)
+            {
+                this.FormBorderStyle = FormBorderStyle.None;
+                this.WindowState = FormWindowState.Maximized;
+            }
         }
     }
 
