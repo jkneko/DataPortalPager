@@ -1,14 +1,14 @@
 {
-	// DataPortal's embedded url
+  // DataPortal's embedded url
   "url": "https://datastudio.google.com/embed/reporting/188e3803-60db-4ec9-84eb-49b61a2c7143",
   // Page count (this setting is available when autoDetectPageCount is false)
-	"pageCount": 2,
-	// Detect page count from DataPortal's DOM
+  "pageCount": 2,
+  // Detect page count from DataPortal's DOM
   "autoDetectPageCount": true,
-	// Waiting time when the application starts
+  // Waiting time when the application starts
   "initialWait": 30,
-	// Interval time for page feed
+  // Interval time for page feed
   "interval": 10,
-	// Maximize when this application is launched
+  // Maximize when this application is launched
   "fullScreen": true
 }
