@@ -34,7 +34,7 @@ namespace DataPortalPager
 
             var stream = new FileStream(settingsFileName, FileMode.Open, FileAccess.Read);
             settings = await JsonSerializer.DeserializeAsync<Settings>(stream, options);
-            timer1.Interval = settings.initialWait * 1000;
+            feedTimer.Interval = settings.initialWait * 1000;
             pageCount = settings.pageCount;
 
             // Initialize chromium webview
@@ -56,7 +56,7 @@ namespace DataPortalPager
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            timer1.Interval = settings.interval * 1000;
+            feedTimer.Interval = settings.interval * 1000;
             if (Form.ActiveForm != this)
                 return;
 
@@ -86,7 +86,9 @@ namespace DataPortalPager
     {
         public String url { get; set; }
         public int pageCount { get; set; }
+        public bool autoDetectPageCount { get; set; }
         public int initialWait { get; set; }
         public int interval { get; set; }
+        public bool fullScreen { get; set; }
     }
 }
